@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
+        integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"
+        integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+        integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="section.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <div class="sidebar">
+            <div class="top-content">
+                <div class="logo-container">
+                    <div class="logo-div">
+                        <img src="image/logo-final192.png" alt="" width="40px">
+                    </div>
+                    <div class="logo-txt">
+                        <h3>Let's Play</h3>
+                    </div>
+                </div>
+                <div class="list-menu">
+                    <ul class="menu">
+                        <p class="head-ul">Main menu</p>
+                        <li class="list-item activateBg" id="hometab-desktop" onclick="showHome()">
+                            <span class="material-symbols-outlined ihome clicked">
+                                home
+                            </span>
+                            <p>Home</p>
+                        </li>
+                        <li class="list-item" id="ideatab-desktop" onclick="showChart()">
+                            <span class="material-symbols-outlined">
+                                emoji_objects
+                            </span>
+                            <p>Tips</p>
+                        </li>
+                        <li class="list-item" id="chatbottab-desktop" onclick="showChatbot()">
+                            <span class="material-symbols-outlined">sms</span>
+
+                            <p>Chatbot</p>
+                        </li>
+                        <li class="list-item" id="profiletab-desktop" onclick="showProfile()">
+                            <span class="material-symbols-outlined">
+                                account_circle
+                            </span>
+                            <p>Profile</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="setting-container">
+                <ul>
+                    <p class="head-ul">setting</p>
+                    <li class="setting-list"><span class="material-symbols-outlined">
+                            headset_mic
+                        </span>
+                        <p>Help Center</p>
+                    </li>
+                    <li class="setting-list logout" id="log-out-2">
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                        <p>Log out</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-main-container">
+            <div class="preloader" id="preloader">
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="startup">
+                <svg class="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
+                    <circle class="path" cx="26px" cy="26px" r="20px" fill="none" stroke-width="4px" />
+                </svg>
+            </div>
+
+            <div class="home-page" id="homePage">
+                <div class="missed-streak" id="missedStreak">
+                    <div class="missed-streak-modal">
+                        <div class="streak-lost-container">
+                            <div class="streak-fire">
+                                <img src="image/fire.svg" alt="" width="60px">
+                            </div>
+                            <div class="streak-lost-text">
+                                <h3>Streak Lost</h3>
+                            </div>
+                            <div class="streak-lost-details">
+                                <p>You missed yesterday's daily challenge.</p>
+                                <p>Your streak has been reset, but your progress isn't lost.</p>
+                            </div>
+                            <div class="continue-learning" id="continueLearn">
+                                <button>Continue Learning</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top">
+                    <div class="flex">
+                        <div class="ls">
+                            <h1 class="mot">Quizzora</h1>
+                            <p class="mt-f">Try it now</p>
+                        </div>
+                        <div class="logo">
+                            <h5>LS</h5>
+                        </div>
+                    </div>
+
+
+                    <div class="cir"></div>
+                    <div class="cir2"></div>
+                </div>
+
+                <section class="container">
+                    <div class="main">
+                        <div class="overlay" id="overlay">
+                            <div class="overlay-box">
+                                <h3>Enter your department</h3>
+                                <p>To be a verified user</p>
+
+                                <div class="input-box">
+                                    <form class="input" id="input-form">
+                                        <select id="dept" name="engineering_dept" required>
+                                            <option value="" disabled selected>
+                                                -- Select department --
+                                            </option>
+                                            <option value="agriculture-bioresources-engineering">
+                                                Agriculture &amp; Bio-resources Engineering
+                                            </option>
+                                            <option value="chemical-engineering">
+                                                Chemical Engineering
+                                            </option>
+                                            <option value="civil-engineering">Civil Engineering</option>
+                                            <option value="electronic-and-computer-engineering">
+                                                Electronic &amp; Computer Engineering
+                                            </option>
+                                            <option value="electrical-engineering">
+                                                Electrical Engineering
+                                            </option>
+                                            <option value="industrial-production-engineering">
+                                                Industrial / Production Engineering
+                                            </option>
+                                            <option value="mechanical-engineering">
+                                                Mechanical Engineering
+                                            </option>
+                                            <option value="metallurgical-and-materials-engineering">
+                                                Metallurgical &amp; Materials Engineering
+                                            </option>
+                                            <option value="polymer-and-textile-engineering">
+                                                Polymer &amp; Textile Engineering
+                                            </option>
+                                            <option value="petroleum-engineering">
+                                                Petroleum Engineering
+                                            </option>
+                                            <option value="non-engineering">Non-Engineering</option>
+                                        </select>
+                                        <button type="submit" class="overlay-btn">Enter</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="head">Recent Quiz </h3>
+
+                            <div class="box-container">
+                                <div id="math-quiz-go" onclick="goToInstruction('maths')" class="box maths">
+                                    <div class="icon"><i class="fa-solid fa-hashtag"></i></div>
+                                    <div class="checked-flex">
+                                        <div class="details">
+                                            <h3>Mathematics</h3>
+                                            <p>25/25 Questions</p>
+                                        </div>
+                                        <div class="checked">
+                                            <img src="image/pngegg.png" width="30px" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="phy-quiz-go" onclick="goToInstruction('physics')" class="box maths physics">
+                                    <div class="icon"><i class="fa-solid fa-hashtag"></i></div>
+                                    <div class="checked-flex">
+                                        <div class="details">
+                                            <h3>Physics</h3>
+                                            <p>25/25 Questions</p>
+                                        </div>
+                                        <div class="checked">
+                                            <img src="image/pngegg.png" width="30px" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tech-quiz-go" onclick="goToInstruction('technology')" class="box en">
+                                    <div class="icon"><i class="fa-solid fa-code"></i></div>
+                                    <div class="checked-flex">
+                                        <div class="details">
+                                            <h3>Technology</h3>
+                                            <p>30/30 Questions</p>
+                                        </div>
+                                        <div class="checked">
+                                            <img src="image/pngegg.png" width="30px" alt="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="main-live">
+                            <h3 class="head">Live Quiz </h3>
+
+                            <div class="box-container">
+                                <div class="box work">
+                                    <div class="icon"><i class="fa-solid fa-code-merge"></i></div>
+                                    <div class="details">
+                                        <h3>English for work</h3>
+                                        <p>32/32 Questions</p>
+                                    </div>
+                                </div>
+                                <div class="box en">
+                                    <div class="icon"><i class="fa-solid fa-code"></i></div>
+                                    <div class="details">
+                                        <h3>English for beginner</h3>
+                                        <p>30/30 Questions</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                </section>
+            </div>
+
+            <!-- Remove profile -->
+            <div class="rem-profile" id="remProfile">
+                <div class="rem-content">
+                    <div class="buts">
+                        <button class="cancel" id="cancel-btn">Cancel</button>
+                        <button class="remove-pfp" id="remove-pfp">Remove Photo</button>
+                    </div>
+                </div>
+            </div>
+            <section class="profile" id="profile">
+                <div class="top">
+                    <div class="flex">
+                        <div class="ls">
+                            <h1 class="mot">Profile</h1>
+                            <p class="mt-f">Check out!</p>
+                        </div>
+                        <div class="logo">
+                            <h5>LS</h5>
+                        </div>
+                    </div>
+
+
+                    <div class="cir"></div>
+                    <div class="cir2"></div>
+                </div>
+                <div class="profile-overlay">
+                    <div class="profile-pics">
+                        <div class="pic-cover"><img src="image/profile.png" class="pic" id="profile-pic"></div>
+
+                        <input type="file" id="input-file-click" accept="image/jpeg, image/png, image/jpg">
+                        <div class="ook">
+                            <div class="upd" id="input-file-upload">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="profile-details">
+                        <div class="flex-name-icon">
+                            <div class="name-details">
+                                <h3 class="name" id="name"></h3>
+                                <!-- <p class="md dept" id="dept-para"></p> -->
+                                <p class="md" id="rand-name">MindMaestro</p>
+                            </div>
+                            <div class="edit-icon" id="edit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#cecece">
+                                    <path
+                                        d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z" />
+                                </svg>
+                            </div>
+                        </div>
+
+
+                        <div class="buttons">
+                            <button type="button" class="dw">Download</button>
+                            <button type="button" class="rs"><a href="#history" class="rs-link">Result
+                                    history</a></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-infos">
+                    <form action="https://formsubmit.co/developerdannydev@gmail.com" id="form-info" method="post">
+                        <!-- <i class="fa-solid fa-chart-line" style="color: #2196F3; font-size: 45px;"></i>
+<i class="fa-solid fa-trophy" style="color: gold; font-size: 50px;"></i>
+<i class="fa-solid fa-file-circle-check" style="color: #4CAF50; font-size: 48px;"></i> -->
+
+                        <input type="text" name="name" readonly placeholder="Your full name" class="name"
+                            id="nameInput">
+                        <input required type="email" name="email" readonly placeholder="Your email address"
+                            class="email" id="emailInput">
+                        <input required placeholder="maths-score" readonly type="text" name="maths_score"
+                            class="maths-score" id="mathsScore">
+                        <input required type="text" name="physics_score" readonly placeholder="physics-score"
+                            class="physics-score" id="physicsScore">
+                        <input required type="text" name="tech_score" readonly placeholder="tech-score"
+                            class="tech-score" id="techScore">
+                        <input type="text" name="Date_submitted" readonly placeholder="date-submitted" class="date-time"
+                            id="dateTime">
+                        <input type="text" name="User_IP" readonly placeholder="user-ip" class="user-ip" id="userIp">
+                        <input type="text" name="country" readonly placeholder="country" class="country" id="country">
+                        <input type="hidden" name="_subject" value="New submission!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="/quiz-submitted.html">
+                        <button type="submit" class="sub-btn" id="submit-to-email">SUBMIT</button>
+                    </form>
+                </div>
+
+
+                <div class="streak-div">
+                    <p class="streak-topic">Daily challenge</p>
+                    <div class="streak-box" id="streak-box">
+                        <div class="streak-text">
+                            <h3 class="streak-para" id="streak-para"><span id="streak-num"></span></h3>
+                            <p class="streak-head">Current Streak</p>
+                        </div>
+                        <div class="streak-icon">
+                            <img src="image/fire.svg" alt="" width="30px">
+                        </div>
+                    </div>
+                </div>
+                <!-- daily challenge modal -->
+                <div class="modal-container" id="daily-modal">
+                    <div class="quiz-box" id="quiz-card">
+                        <div class="cancel-box" id="">
+                            <span class="material-symbols-outlined" id="cancel-btnn">
+                                cancel
+                            </span>
+                        </div>
+                        <div class="switch-tab">
+                            <div class="sw-box">
+                                <div class="tabS activateTab active-tab" onclick="switchDailyChallenge()">
+                                    <h3>Challenge</h3>
+                                </div>
+                                <div class="tabS streak" onclick="switchStreakTab()">
+                                    <h3>Streak</h3>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="daily-challenge-div showDaily" id="daily-challenge-div">
+
+                            <p class="dailyC">Daily challenge</p>
+                            <div class="challenge" id="challenge-box">
+                                <div class="question-box">
+                                    <h3 id="daily-question">What is the capital of France?</h3>
+                                </div>
+                                <div class="options-container">
+                                    <button class="daily-option wrong">Berlin</button>
+                                    <button class="daily-option wrong">Madrid</button>
+                                    <button class="daily-option correct">Paris</button>
+                                    <button class="daily-option wrong">Rome</button>
+                                </div>
+                            </div>
+                            <div class="completed-challenge" id="completed-challenge">
+                                <div class="normal-medal" id="medal-box">
+                                    <div class="xp-earned-container">
+                                        <p class="xp-earned-wrong-txt" id="xp-earned-wrong">+25 XP earned</p>
+                                    </div>
+                                    <div class="medal-con">
+                                        <img src="image/medal.png" id="medal-type" alt="" width="120px">
+                                    </div>
+                                    <div class="completed-challenge-txt">
+                                        <h2>Challenge Completed</h2>
+                                        <p>You've already completed today's daily challenge.</p>
+                                    </div>
+
+                                    <div class="next-challenge">
+                                        <p id="streak-quote-norm"></p>
+                                    </div>
+                                </div>
+                                <div class="top-medal" id="top-medal-box">
+                                    <div class="xp-earned-container">
+                                        <p class="xp-earned-correct-txt" id="xp-earned-correct">+25 XP earned</p>
+                                    </div>
+                                    <div class="medal-con">
+                                        <img src="image/top.png" id="medal-type" alt="" width="120px">
+                                    </div>
+                                    <div class="completed-challenge-txt">
+                                        <h2>Challenge Completed</h2>
+                                        <p>You've already completed today's daily challenge.</p>
+                                    </div>
+
+                                    <div class="next-challenge">
+                                        <p id="streak-quote-top"></p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="streak-page-tab" id="streak-page-tab">
+                            <div class="streak-page-content">
+                                <div class="streak-card-large">
+                                    <div class="streak-content-large">
+                                        <div class="fire-icon-large">
+                                            <img src="image/fire.svg" alt="">
+                                        </div>
+                                        <div class="streak-number-large">
+                                            <h1 id="streakNum-large"></h1>
+
+                                        </div>
+                                        <div class="streak-label-large">
+                                            <p>Current Streak!</p>
+                                        </div>
+
+                                        <div class="your-stat">
+                                            <p class="your-stat-txt">Your Statictics</p>
+                                            <div class="your-stat-box">
+                                                <div class="stat-box">
+                                                    <div class="xp-points">
+                                                        <div class="xp-points-top">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <span class="xp-points-txt" id="xpPoints">0</span>
+                                                        </div>
+
+                                                        <div class="xp-points-label">
+
+                                                            <p>XP Points</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="divider">
+                                                    <hr>
+                                                </div>
+                                                <div class="stat-box">
+                                                    <div class="badges-earned">
+                                                        <div class="badges-earned-top">
+                                                            <i class="bi bi-patch-check-fill"></i>
+                                                            <span class="badges-earned-txt">0</span>
+                                                        </div>
+
+                                                        <div class="badges-earned-label">
+                                                            <p>Badges Earned</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="what-is-streak">
+                                        <h3>What is Streak?</h3>
+
+                                        <p class="what-is-streak-details">
+                                            A streak shows how many days in a row you complete the daily quiz. Keep
+                                            it alive to earn rewards, badges, and track your progress.
+                                        </p>
+                                    </div>
+
+                                    <div class="milestone">
+                                        <div class="sdays-milestone">
+                                            <div class="sdays-img">
+                                                <img src="image/7days.png" alt="" width="50px">
+                                            </div>
+                                            <div class="sdays-milestone-content">
+                                                <div class="sdays-milestone-content-details">
+                                                    <h3>For 7 Days Streak</h3>
+                                                </div>
+                                                <div class="sdays-milestone-content-label">
+                                                    <p>You'll get a <span>25 XP</span> points.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sdays-checkmark">
+                                            <img src="image/pngegg.png" alt="" width="20px">
+                                        </div>
+                                    </div>
+                                    <div class="more-update-alert">
+                                        <p>More updates coming soon.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="history" id="history">
+                    <h3 class="hd-txt">Result history</h3>
+                    <div class="history-container">
+                        <div class="content-container active">
+                            <div class="req">General Maths</div>
+                            <div class="ans" id="mathscore">
+                                Not completed
+                            </div>
+                        </div>
+                        <div class="content-container">
+                            <div class="req">Physics </div>
+                            <div class="ans" id="physcore">
+                                Not completed
+                            </div>
+                        </div>
+                        <div class="content-container">
+                            <div class="req">Technology</div>
+                            <div class="ans" id="techscore">
+                                Not completed
+                            </div>
+                        </div>
+                        <div class="content-container">
+                            <div class="req">Use of English</div>
+                            <div class="ans">
+                                Not completed
+                            </div>
+                        </div>
+                        <div class="content-container">
+                            <div class="req">General Maths</div>
+                            <div class="ans">
+                                Not completed
+                            </div>
+                        </div>
+                        <div class="content-container">
+                            <div class="req">lab test</div>
+                            <div class="ans">
+                                Not completed
+                            </div>
+                        </div>
+                        <div class="content-container">
+                            <div class="req">General Maths</div>
+                            <div class="ans">
+                                Not completed
+                            </div>
+                        </div>
+
+                        <div class="retake-section">
+                            <button type="button" id="retake-quiz" class="retake-button">Analyze result</button>
+                        </div>
+                    </div>
+
+                    <div class="log-out-div">
+                        <h2 class="myacc">My Account</h2>
+                        <!-- <h2 class="help-center">help Center</h2> -->
+                        <h3 class="logout" id="log-out">Log Out</h3>
+                        
+                    </div>
+                    <div class="app-attribution">
+                        <p>© 2025 QuizApp. Built by <a class="dannydev-link" href="https://danny-245.github.io/Dannydev3/">Dannydev</a></p>
+                    </div>
+                </div>
+            </section>
+            <section class="chart" id="chart">
+                <div class="top">
+                    <div class="flex">
+                        <div class="ls">
+                            <h1 class="mot">Analysis</h1>
+                            <p class="mt-f">Try it now</p>
+                        </div>
+                        <div class="logo">
+                            <h5>LS</h5>
+                        </div>
+                    </div>
+
+
+                    <div class="cir"></div>
+                    <div class="cir2"></div>
+                </div>
+                <div class="middle-content">
+                    <div class="main-wrapper">
+                        <div class="box-wrapper">
+                            <h3>QUIZ DETAILS</h3>
+                            <div class="boxs-container">
+                                <div class="box-detail">
+                                    <div class="box-top-icon">
+                                        <img src="image/crown.png" width="30px" alt="crown">
+                                        <div class="rise-per">
+                                            <p class="up"></p>
+                                            <span>20%</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="box-num">20</h3>
+                                    <p class="det-txt">Number of Questions in each subject</p>
+                                </div>
+                                <div class="box-detail">
+                                    <div class="box-top-icon">
+                                        <img src="image/stopwatch.png" width="30px" alt="stopwatch">
+                                        <p></p>
+                                    </div>
+                                    <h3 class="box-num">15 mins</h3>
+                                    <p class="det-txt">Amounts of time for the Quiz</p>
+                                </div>
+                            </div>
+                            <div class="programmes">
+                                <div class="progress-box-container">
+                                    <div class="progress-head">
+                                        ATTEMPTED NO
+                                    </div>
+                                    <div class="progress-box b1" id="maths-box">
+                                        <div class="logo-txt-box">
+                                            <div class="logo">
+                                                <p>M</p>
+                                            </div>
+                                            <div class="txt">
+                                                <h3>Mathematics</h3>
+                                                <p> <span id="answered-percentage-txt"></span></p>
+                                                <div class="progress-container">
+                                                    <div class="progress-bar">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="expand-arrow">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress-box b2" id="phy-box">
+                                        <div class="logo-txt-box">
+                                            <div class="logo">
+                                                <p><i class="fa-solid fa-compact-disc"></i></p>
+                                            </div>
+                                            <div class="txt">
+                                                <h3>Physics</h3>
+                                                <span id="answered-percentage-txt-phy"></span>
+                                                <div class="progress-container">
+                                                    <div class="progress-bar">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="expand-arrow">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="progress-box b3" id="tech-box">
+                                        <div class="logo-txt-box">
+                                            <div class="logo">
+                                                <p><i class="fa-solid fa-code-merge"></i></p>
+                                            </div>
+                                            <div class="txt">
+                                                <h3>Technology</h3>
+                                                <span id="answered-percentage-txt-tech"></span>
+
+                                                <div class="progress-container">
+                                                    <div class="progress-bar">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="expand-arrow">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="progress-box b4">
+                                        <div class="logo-txt-box">
+                                            <div class="logo">
+                                                <p><i class="fa-solid fa-recycle"></i></p>
+                                            </div>
+                                            <div class="txt">
+                                                <h3>Mathematics</h3>
+                                                <p>80% of quiz</p>
+                                                <div class="progress-container">
+                                                    <div class="progress-bar">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="expand-arrow">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+            <section class="chatbot" id="chatbot">
+                <div class="chatbot-container">
+                    <div class="top-con">
+                        <div class="chatbot-logo">
+                            <img src="image/chatbot.png" alt="lOGO" width="50px">
+                            <h3>Chatbot</h3>
+                        </div>
+                        <div class="hello">
+                            <img src="image/chatbot.png" alt="lOGO" width="50px">
+
+                        </div>
+                    </div>
+                    <div class="chat-div">
+                        <div class="bot bot-message">
+                            <!-- <img src="image/robot.png" width="12px" alt="bot"> -->
+                            <div class="message-txt">
+                                <p>Hey there </p>
+                                <p>How can i help you today
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="chat-footer">
+                    <form action="#" class="chat-form">
+                        <textarea id="message" class="message-input" id="messageInput" required
+                            placeholder="Message..."></textarea>
+                        <div class="chat-controls">
+                            <button type="button" class="material-symbols-outlined">
+                                sentiment_satisfied
+                            </button>
+                            <div class="file-upload-wrapper">
+                                <input type="file" accept="images/*" id="file-input" hidden>
+                                <img src="#">
+                                <button type="button" id="file-upload" class="material-symbols-outlined">
+
+                                    attach_file
+                                </button>
+                                <button type="button" id="file-cancel" class="material-symbols-outlined">
+                                    close
+                                </button>
+                            </div>
+
+                            <button type="button" id="send-btn" class="material-symbols-outlined">
+                                arrow_upward
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+
+
+            <section class="fixed">
+                <div class="tab-con">
+                    <div class="tab">
+                        <div class="home" onclick="showHome()">
+
+                            <span class="material-symbols-outlined ihome clicked" id="homeIcon">
+                                home
+                            </span>
+
+                        </div>
+                        <div class="idea">
+                            <span class="material-symbols-outlined" id="idealIcon" onclick="showChart()">
+                                emoji_objects
+                            </span>
+                        </div>
+                        <div class="message" onclick="showChatbot()">
+                            <span class="material-symbols-outlined" id="msgIcon" onclick="msg()">sms</span>
+                        </div>
+                        <div class="profile" onclick="showProfile()">
+                            <span class="material-symbols-outlined" id="profileIcon">
+                                account_circle
+                            </span>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="section.js"></script>
+</body>
+
+</html>

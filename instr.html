@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instruction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="instr.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="container">
+            <div class="top-flex">
+                <h2>
+                    Proceed to clicking the next button!
+                </h2>
+                <div class="list-rules">
+                    <ul>
+                        <li class="list-item">Read Each Question Carefully.</li>
+                        <li class="list-item">Changed your mind? Hit Previous</li>
+                        <li class="-item">Timed Quiz — Watch the clock.</li>
+                        <li class="list-item">No External Help Allowed</li>
+                        <li class="list-item">Score Will Be Based on Accuracy.</li>
+                    </ul>
+                </div>
+
+                <form class="pro-btn" id="form">
+                    <p class="gen">Enter the code "<strong class="code" id="code"></strong>" to continue</p>
+                    <div class="input-box">
+                        <div class="input-flex">
+
+                            <input type="text" id="id-code" placeholder="| Enter your code" autocomplete="off">
+                            <button title="verify code" type="submit"><i class="fa-solid fa-plus"></i></button>
+
+                        </div>
+                    </div>
+                    <div class="gen alert-msg" id="alert-msg"><img src="image/pngegg.png" width="20px" alt="">
+                        <p>You can now proceed</p>
+                    </div>
+                </form>
+            </div>
+            <div class="img">
+                <img src="image/undraw_questions_g2px.svg" alt="">
+            </div>
+        </div>
+        <div class="resume">
+            <!-- <div class="resume-txt">
+                <h3><span>Resume</span><br>Quiz</h3>
+            </div> -->
+            <div title="start" class="start" onclick="goToQuiz()"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+    </div>
+
+    <div class="modal" id="overlayModal"><img src="image/rejection-mark.png" width="20px" alt="">
+        <p>Code does not match</p>
+    </div>
+    <div class="modal2" id="overlayModal2"><img src="image/pngegg.png" width="20px" alt="">
+        <p>Verify Code to proceed</p>
+    </div>
+
+
+    <script src="instr.js"></script>
+</body>
+
+</html>

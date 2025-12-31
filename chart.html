@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Results Pie Chart</title>
+  <!-- Include Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<style>
+    #resultChart {
+        width: 50%;
+    }
+    .container {
+        width: 5000px;
+        height: 5000px;
+        margin: auto;
+    }
+    @media (max-width: 700px) {
+    .container {
+        width: 100%;
+        height: 600px;
+    }
+    body {
+        background-color: blue
+    }
+    }
+</style>
+  <h2>Quiz Results</h2>
+
+  <!-- Canvas where the chart will be rendered -->
+  <div class="container">
+  <canvas id="resultChart"></canvas>
+</div>
+
+  <!-- Your JavaScript code will go here -->
+  <script>
+    // Data for the chart
+    const subjects = ['Math', 'Science', 'English', 'feg', 'kem']; // Chart labels
+    const scores = [85, 70, 90, 75, 45]; // Corresponding scores
+
+    // Get canvas context
+    const ctx = document.getElementById('resultChart').getContext('2d');
+
+    // Create the pie chart
+    const resultChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: subjects,
+        datasets: [{
+          data: scores,
+          backgroundColor: [
+            '#f39c12', // Orange - Math
+            '#00c0ef', // Blue - Science
+            '#00a65a',
+            '#00ad5a',  // Green - English
+            '#f0a65a'  // Green - English
+              // Green - English
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          },
+          title: {
+            display: true,
+            text: 'Subject-wise Quiz Performance'
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

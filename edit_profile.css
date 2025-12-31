@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  position: relative;
+}
+
+.top {
+  height: 80px;
+  width: 100%;
+  background-color: #8a80b1;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.top .txt h3 {
+  color: white;
+  font-size: 20px;
+}
+
+.top .icon i {
+  color: white;
+  font-size: 18px;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 30px auto 0;
+  padding: 20px;
+}
+
+.form-container .input-group {
+  margin: 18px 0;
+}
+
+.form-container .input-group input {
+  width: 100%;
+  margin: 2px 0;
+  padding: 10px 7px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  /* text-transform: capitalize; */
+}
+
+input#username,
+input::placeholder {
+  text-transform: capitalize;
+}
+
+.form-container select {
+  width: 100%;
+  padding: 10px 15px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.form-container .input-group p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.input-group .password {
+  position: relative;
+}
+
+.input-group.password {
+  position: relative;
+}
+
+.input-group .toggle {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 43px;
+}
+
+.input-group .toggle::after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f070";
+
+  font-weight: 900;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
+  color: #9c9c9c;
+}
+
+.input-group .toggle.show::after {
+  content: "\f06e";
+}
+
+.submit-btn {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.submit-btn .save-change-btn {
+  width: 100%;
+  padding: 15px 7px;
+  outline: 0;
+  border: none;
+  color: #fff;
+  background-color: #8a80b1;
+  border-radius: 5px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.checkbox span {
+  font-size: 12px;
+  /* pointer-events: none; */
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-box .validate-email-error-msg {
+  font-size: 8px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: none;
+  /* color: red; */
+}
+
+.date-joined {
+  display: flex;
+  gap: 7px;
+  margin-top: 50px;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.date-joined .joined-txt {
+  font-weight: 600;
+  color: #9e9e9e;
+}
+
+.date-joined .date-txt {
+  font-weight: 500;
+  color: #555;
+}
+
+
+#startup {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+
+#startup.show {
+  display: flex;
+}
+
+/* .form-infos {
+  display: none;
+} */
+
+.spinner-container {
+  animation: rotate 2s linear infinite;
+  -webkit-animation: rotate 2s linear infinite;
+}
+
+.spinner-container .path {
+  stroke-dasharray: 1, 150;
+  /* 1%, 101% circumference */
+  stroke-dashoffset: 0;
+  stroke: #635d7a;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    /* 1%, 101% circumference */
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    /* 70%, 101% circumference */
+    stroke-dashoffset: -35;
+    /* 25% circumference */
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    /* 70%, 101% circumference */
+    stroke-dashoffset: -124;
+    /* -99% circumference */
+  }
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    /* 1%, 101% circumference */
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    /* 70%, 101% circumference */
+    stroke-dashoffset: -35;
+    /* 25% circumference */
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    /* 70%, 101% circumference */
+    stroke-dashoffset: -124;
+    /* -99% circumference */
+  }
+}

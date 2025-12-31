@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Quizzora is an interactive quiz platform for practicing exam-style questions, tracking progress, and staying consistent with daily challenges.">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta property="og:title" content="Quizzora">
+    <meta property="og:description" content="Practice exam-style questions and build consistency with daily quizzes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quizzora.online">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="manifest" href="image/site.webmanifest">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Quizzora - Practice Exam Questions Daily</title>
+    <link rel="stylesheet" href="app.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body>
+    <nav class="py-3 fixed-top navbar navbar-expand-lg bg-white navbar-light border-bottom shadow-sm">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="image/logo.png" alt="" class="img-fluid" width="120px">
+            </a>
+            <div class="nav-actions">
+                <a href="sign-up.html" class="text-decoration-none login-link px-3 py-2">Login</a>
+                <a href="sign-up.html" class="text-decoration-none signup-link px-3 py-2">Sign up</a>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container text-center section-header">
+            <div class="test-knowledge">
+                <h1 class="fw-bold fs-1 px-5 px-md-5 pt-5">
+                    <span class="text-test">Test your</span>
+                    <span id="autotype-text" class="typed-text"></span>
+                </h1>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-9 col-xl-6">
+                        <p class="text-muted mx-auto mt-4 px-2 px-md-0">
+                            Take daily quizzes, track your streaks, earn badges, and sharpen your knowledge every day.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="get-started mt-4">
+                <button type="button" class="btn fs-6">Get Started</button>
+            </div>
+        </div>
+    </section>
+    <section class="in-app-features mb-4 py-5">
+        <h1 class="h1 text-center fs-4 fw-bold">In-app Features</h1>
+        <div class="container mt-5">
+            <div class="row g-2">
+                <div class="col-6 col-md-3">
+                    <div class="card card-pg">
+                        <div class="card-header c1"></div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h3 class="fs-6 fw-bold">Test your IQ</h3>
+                            </div>
+                            <div class="card-link">
+                                <a href="sign-up.html"
+                                    class="mt-2 d-flex align-items-center justify-content-between text-decoration-none start-now-link">
+                                    <p class="m-0">Start now</p><i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card card-pg">
+                        <div class="card-header c2"></div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h3 class="fs-6 fw-bold">Learn & Earn</h3>
+                            </div>
+                            <div class="card-link">
+                                <a href="sign-up.html"
+                                    class="mt-2 d-flex align-items-center justify-content-between text-decoration-none start-now-link">
+                                    <p class="m-0">Start now</p><i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card card-pg">
+                        <div class="card-header c3"></div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h3 class="fs-6 fw-bold">Test before play</h3>
+                            </div>
+                            <div class="card-link">
+                                <a href="sign-up.html"
+                                    class="mt-2 d-flex align-items-center justify-content-between text-decoration-none start-now-link">
+                                    <p class="m-0">Start now</p><i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card card-pg">
+                        <div class="card-header c4"></div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h3 class="fs-6 fw-bold">Build Streak</h3>
+                            </div>
+                            <div class="card-link">
+                                <a href="sign-up.html"
+                                    class="mt-2 d-flex align-items-center justify-content-between text-decoration-none start-now-link">
+                                    <p class="m-0">Start now</p><i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="why-quizzora mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="fw-bold">Why Quizzora?</h3>
+                    <p class="mt-2 text-muted">
+                        Quizzora helps you practice exam-style questions across multiple subjects, monitor your learning
+                        progress, and stay consistent with daily challenges designed to strengthen understanding, boost
+                        confidence, and prepare you for real exam conditions.
+
+                    <p class="mt-1 text-muted">
+                        It’s built to help you study smarter, stay motivated, and turn consistent practice into real
+                        exam success.
+                    </p>
+                    </p>
+                    <button class="btn btn-why-quizzora w-100 py-3 px-5" type="button">Get Started</button>
+                </div>
+                <div class="col-sm-6 mt-sm-0 mt-5 d-flex justify-content-center align-items-center">
+                    <img src="image/icnc2.png" alt="" width="290px" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="how-it-works text-center mb-5">
+        <div class="how-it-works-details">
+            <h3 class="fw-bold">How is works</h3>
+            <p class="text-muted">Everything you need to improve — in one place</p>
+        </div>
+        <div class="container mt-5">
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card card-wrapper">
+
+                        <div class="icon-wrapper bg-journal">
+                            <i class="bi bi-journal-check"></i>
+                        </div>
+
+                        <div class="card-body">
+                            <h4 class="h4 fs-5 fw-bold">Exam-Style Questions</h4>
+                            <p class="text-muted mt-3">
+                                Practice real questions across different subjects.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card card-wrapper">
+
+                        <div class="icon-wrapper bg-streak">
+                            <i class="bi bi-fire"></i>
+                        </div>
+
+                        <div class="card-body">
+                            <h4 class="h4 fs-5 fw-bold">Daily Streaks</h4>
+                            <p class="text-muted mt-3">
+                                Build consistency and stay motivated every day.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card card-wrapper">
+
+                        <div class="icon-wrapper bg-badges">
+                            <i class="bi bi-patch-check-fill"></i>
+                        </div>
+
+                        <div class="card-body">
+                            <h4 class="h4 fs-5 fw-bold">XP & Badges</h4>
+                            <p class="text-muted mt-3">
+                                Earn XP, unlock milestones, and track achievements.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card card-wrapper">
+
+                        <div class="icon-wrapper bg-stats">
+                            <i class="bi bi-bar-chart-line-fill"></i>
+                        </div>
+
+                        <div class="card-body">
+                            <h4 class="h4 fs-5 fw-bold">Your Stats</h4>
+                            <p class="text-muted mt-3">
+                                Monitor accuracy, streaks, and overall progress.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="m-0 clearfix"></div> -->
+    <section class="ready-to-levelup text-center">
+        <div class="container pt-5 pb-5 level-wrapper">
+            <div class="level-up ">
+                <h3 class="fw-bold px-1 px-md-5">Ready to level up your learning?</h3>
+                <p class="text-muted mt-4">Start practicing today and see real improvement.</p>
+                <button type="button" class="btn">Get Started</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-wrapper">
+        <div class="container">
+            <h5 class="d-flex justify-content-center align-items-center">© 2025 &nbsp;<span
+                    class="text-light">Quizzora</span>. All rights reserved.</h5>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="index2.js"></script>
+</body>
+
+</html>

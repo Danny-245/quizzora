@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css" />
+      
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="edit_profile.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="startup">
+        <svg class="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
+            <circle class="path" cx="26px" cy="26px" r="20px" fill="none" stroke-width="4px" />
+        </svg>
+    </div>
+      <div class="top">
+        <div class="icon" id="go-back">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="txt">
+          <h3 class="editpro-text">Edit Profile</h3>
+        </div>
+      </div>
+      <article>
+        <div class="form-container">
+          <form action="" id="editProfile">
+            <div class="input-group user">
+              <p>Username</p>
+              <input
+                type="text"
+                placeholder="username"
+                name="username"
+                id="username"
+                autocomplete="off"
+                oninput="removeNumber(this)"
+                required
+              />
+            </div>
+            <div class="input-group email">
+              <div class="email-box">
+                <p>Email</p>
+                <div class="validate-email-error-msg">✔ VALID</div>
+              </div>
+              <input
+                type="email"
+                placeholder="email"
+                name="email"
+                id="email"
+                autocomplete="off"
+                oninput="checkEmail()"
+                required
+              />
+            </div>
+            <div class="input-group password">
+              <p>Password</p>
+              <input
+                type="password"
+                placeholder="password"
+                class="password-input"
+                name="password"
+                id="password"
+                autocomplete="new-password"
+                required
+              />
+              <span class="toggle" id="toggle"></span>
+            </div>
+            <div class="input-group dept">
+              <p>Department</p>
+
+              <select id="engineering-dept" name="engineering_dept" required>
+                <option value="" disabled selected>
+                  -- Select department --
+                </option>
+                <option value="agriculture-bioresources-engineering">
+                  Agriculture &amp; Bio-resources Engineering
+                </option>
+                <option value="chemical-engineering">
+                  Chemical Engineering
+                </option>
+                <option value="civil-engineering">Civil Engineering</option>
+                <option value="electronic-and-computer-engineering">
+                  Electronic &amp; Computer Engineering
+                </option>
+                <option value="electrical-engineering">
+                  Electrical Engineering
+                </option>
+                <option value="industrial-production-engineering">
+                  Industrial / Production Engineering
+                </option>
+                <option value="mechanical-engineering">
+                  Mechanical Engineering
+                </option>
+                <option value="metallurgical-and-materials-engineering">
+                  Metallurgical &amp; Materials Engineering
+                </option>
+                <option value="polymer-and-textile-engineering">
+                  Polymer &amp; Textile Engineering
+                </option>
+                <option value="petroleum-engineering">
+                  Petroleum Engineering
+                </option>
+                <option value="non-engineering">Non-Engineering</option>
+              </select>
+            </div>
+            <div class="checkbox" id="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <span>Notify me about new features and activity.</span>
+            </div>
+            <div class="submit-btn">
+              <button class="save-change-btn" type="submit">
+                Save changes
+              </button>
+            </div>
+          </form>
+          <div class="date-joined">
+            <p class="joined-txt">Joined</p>
+            <span class="date-txt" id="date-joined-txt"></span>
+          </div>
+        </div>
+        
+      </article>
+       
+    </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+
+    <script src="edit_profile.js"></script>
+  </body>
+</html>

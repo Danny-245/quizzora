@@ -1,0 +1,217 @@
+:root {
+  --main-color: #8a80b1;
+  --main-color-hover: #796ea7;
+  --text-link: #8e8ebe;
+  --section-background: #f4f2ffb4;
+  --primary-dark: #1e1b2e;
+  --light-text: #bdb8d6;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  /* gap: 6px; */
+}
+.nav-actions a.login-link {
+  color: #424242;
+}
+.nav-actions a.signup-link {
+  color: #fff;
+  /* padding: 9px 12px; */
+  background-color: var(--main-color);
+  border-radius: 20px;
+}
+.section-header {
+  margin-top: 70px;
+}
+.section-header .typed-text {
+  color: #8a80b1;
+}
+.section-header .text-test {
+  color: #d3af61;
+}
+.typed-cursor {
+  color: #8a80b1;
+  font-weight: 700;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.test-knowledge p {
+  text-align: center;
+  font-size: 16px;
+}
+@media (min-width: 510px) {
+  .test-knowledge p {
+    font-size: 20px;
+  }
+}
+.get-started button {
+  padding: 10px 25px;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 24px;
+  font-size: 18px;
+}
+.get-started button:hover {
+  background-color: var(--main-color-hover);
+  color: #fff;
+}
+.in-app-features {
+  margin-top: 60px;
+  background-color: var(--section-background);
+}
+/* .card-pg {
+    height: 300px;
+} */
+.c1,
+.c2,
+.c3,
+.c4 {
+  height: 220px;
+}
+.c1 {
+  background: url(image/colleagues-studying-university-library.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.c2 {
+  background: url(image/group-diverse-teens-young-people-doing-activities-together-celebrating-world-youth-skills-day.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.c3 {
+  background: url(image/medium-shot-kid-cheating-school-test.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.c4 {
+  background: url(image/smiling-women-working-with-laptop-public-library.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.start-now-link {
+  font-size: 13px;
+  color: var(--text-link);
+}
+.card-pg {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-pg:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.why-quizzora {
+  margin-top: 80px;
+}
+.why-quizzora .btn-why-quizzora {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.why-quizzora p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.how-it-works {
+  margin-top: 60px;
+}
+.how-it-works .how-it-works-details p {
+  font-size: 13px;
+}
+.card-wrapper {
+    position: relative;
+    z-index: 1;
+border-radius: 25px;
+  border: none;
+  padding: 30px 20px;
+  background: #fff;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02), 
+                        0 20px 40px rgba(0, 0, 0, 0.03);
+}
+.card-wrapper:hover {
+    transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(108, 93, 211, 0.12);
+
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    margin: 0 auto 25px;
+}
+.card-wrapper:hover .icon-wrapper {
+      transform: scale(1.1) rotate(5deg);
+}
+.bg-journal {
+background: #fff7ed; 
+color: #f97316;
+}
+.bg-streak {
+    background: #fef2f2; 
+    color: #ef4444;
+}
+.bg-badges {
+    background: #f5f3ff; 
+    color: #8b5cf6;
+}
+.bg-stats {
+    background: #f0f9ff;
+    color: #0ea5e9;
+}
+.card .card-body p {
+    font-size: 0.88rem;
+}
+.ready-to-levelup {
+    
+    margin-top: 100px;
+    background: var(--section-background);
+}
+.level-up button {
+    color: #fff;
+    margin-top: 26px;
+    padding: 10px 15px;
+    background-color: var(--main-color);
+    padding: 10px 40px;
+}
+.level-up button:hover {
+    color: #fff;
+    background-color: var(--main-color-hover);
+
+}
+.level-up {
+    /* margin-top: 80px; */
+}
+.footer-wrapper {
+    height: 80px;
+    color: var(--light-text);
+ background-color: var(--primary-dark);
+}
+.footer-wrapper h5 {
+    line-height: 80px;
+    font-size: 0.8rem;
+}
