@@ -12,3 +12,10 @@ var typed = new Typed("#autotype-text", {
     loopCount: Infinity,
     startDelay: 1000
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+navigator.serviceWorker.register("/service-worker.js")
+  .then(() => console.log("SW registered ✓"))
+  .catch(err => console.log("SW error:", err));
