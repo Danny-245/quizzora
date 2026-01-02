@@ -1,105 +1,106 @@
 const questions = [
   {
-    question: "A car moves with a speed of 72 km/h. What is the speed in m/s?",
-    answers: ["18 m/s", "20 m/s", "22 m/s", "25 m/s"],
-    correct: "20 m/s"
+    question: "A body starts from rest and accelerates uniformly at 4 m/s². What distance does it cover in 5 seconds?",
+    answers: ["40 m", "50 m", "60 m", "80 m"],
+    correct: "50 m"
   },
   {
-    question: "If a force of 10 N is applied on a body of mass 2 kg, what is the acceleration?",
+    question: "A stone is dropped from a height of 45 m. How long will it take to reach the ground? (g = 10 m/s²)",
+    answers: ["2 s", "3 s", "4 s", "5 s"],
+    correct: "3 s"
+  },
+  {
+    question: "An object moving in a circular path has constant speed. Which quantity is changing?",
+    answers: ["Speed", "Velocity", "Mass", "Kinetic energy"],
+    correct: "Velocity"
+  },
+  {
+    question: "A force of 20 N acts on a mass of 5 kg. What is the acceleration produced?",
     answers: ["2 m/s²", "4 m/s²", "5 m/s²", "10 m/s²"],
-    correct: "5 m/s²"
+    correct: "4 m/s²"
   },
   {
-    question: "A ball is thrown vertically upwards with speed 20 m/s. How long will it take to reach the highest point? (g = 10 m/s²)",
-    answers: ["1 s", "2 s", "3 s", "4 s"],
-    correct: "2 s"
+    question: "The momentum of a body is doubled. What happens to its kinetic energy?",
+    answers: ["Doubles", "Triples", "Becomes four times", "Remains the same"],
+    correct: "Becomes four times"
   },
   {
-    question: "The unit of power is:",
-    answers: ["Newton", "Joule", "Watt", "Pascal"],
-    correct: "Watt"
+    question: "Which of the following has the highest refractive index?",
+    answers: ["Air", "Water", "Glass", "Diamond"],
+    correct: "Diamond"
   },
   {
-    question: "If a machine has an efficiency of 80% and the input work is 200 J, what is the output work?",
-    answers: ["150 J", "160 J", "170 J", "180 J"],
-    correct: "160 J"
+    question: "A convex lens produces a real image that is the same size as the object. Where is the object placed?",
+    answers: ["At focus", "Beyond 2F", "At 2F", "Between F and 2F"],
+    correct: "At 2F"
   },
   {
-    question: "Sound travels fastest in:",
-    answers: ["Air", "Water", "Steel", "Vacuum"],
-    correct: "Steel"
+    question: "What happens to the resistance of a conductor if its length is doubled and area is halved?",
+    answers: ["Remains same", "Doubles", "Quadruples", "Becomes half"],
+    correct: "Quadruples"
   },
   {
-    question: "A lens has a focal length of 20 cm. What is its power?",
-    answers: ["2.5 D", "4 D", "5 D", "10 D"],
-    correct: "5 D"
+    question: "The emf of a cell is 2 V and its internal resistance is 0.5 Ω. If the current drawn is 2 A, what is the terminal voltage?",
+    answers: ["1 V", "1.5 V", "2 V", "3 V"],
+    correct: "1 V"
   },
   {
-    question: "What is the speed of light in vacuum?",
-    answers: ["2.5 × 10⁸ m/s", "3.0 × 10⁸ m/s", "3.5 × 10⁸ m/s", "4.0 × 10⁸ m/s"],
-    correct: "3.0 × 10⁸ m/s"
+    question: "Which wave phenomenon proves the wave nature of light?",
+    answers: ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+    correct: "Diffraction"
   },
   {
-    question: "The SI unit of electric charge is:",
-    answers: ["Ampere", "Coulomb", "Volt", "Ohm"],
-    correct: "Coulomb"
+    question: "A transformer works on the principle of:",
+    answers: ["Electrostatics", "Electromagnetic induction", "Magnetic force", "Ohm’s law"],
+    correct: "Electromagnetic induction"
   },
   {
-    question: "A current of 2 A flows for 5 minutes. What is the total charge transferred?",
-    answers: ["300 C", "500 C", "600 C", "700 C"],
-    correct: "600 C"
+    question: "The time period of a simple pendulum depends on:",
+    answers: ["Mass of bob", "Amplitude", "Length of string", "Material of string"],
+    correct: "Length of string"
   },
   {
-    question: "The resistance of a wire is 10 Ω. If a voltage of 20 V is applied, what is the current?",
-    answers: ["1 A", "2 A", "3 A", "4 A"],
-    correct: "2 A"
+    question: "What is the escape velocity from Earth approximately?",
+    answers: ["7.9 km/s", "9.8 km/s", "11.2 km/s", "15 km/s"],
+    correct: "11.2 km/s"
   },
   {
-    question: "Which of the following is a vector quantity?",
-    answers: ["Speed", "Mass", "Acceleration", "Energy"],
-    correct: "Acceleration"
+    question: "Which radiation has the highest penetrating power?",
+    answers: ["Alpha", "Beta", "Gamma", "X-rays"],
+    correct: "Gamma"
   },
   {
-    question: "What is the period of a pendulum that makes 30 oscillations in 60 seconds?",
-    answers: ["1 s", "2 s", "3 s", "4 s"],
-    correct: "2 s"
+    question: "The potential difference between two points is 12 V. If 6 J of work is done, what is the charge transferred?",
+    answers: ["0.25 C", "0.5 C", "1 C", "2 C"],
+    correct: "0.5 C"
   },
   {
-    question: "The energy possessed by a moving body is called:",
-    answers: ["Potential energy", "Kinetic energy", "Mechanical energy", "Heat energy"],
-    correct: "Kinetic energy"
+    question: "A wave has a frequency of 100 Hz and wavelength 0.5 m. What is its speed?",
+    answers: ["25 m/s", "50 m/s", "100 m/s", "200 m/s"],
+    correct: "50 m/s"
   },
   {
-    question: "If a wave has a frequency of 50 Hz and wavelength 2 m, what is its speed?",
-    answers: ["50 m/s", "75 m/s", "100 m/s", "120 m/s"],
-    correct: "100 m/s"
+    question: "Which law explains why a liquid rises in a narrow tube?",
+    answers: ["Pascal’s law", "Boyle’s law", "Capillarity", "Bernoulli’s principle"],
+    correct: "Capillarity"
   },
   {
-    question: "What type of mirror is used in a car’s rear-view mirror?",
-    answers: ["Plane mirror", "Concave mirror", "Convex mirror", "Spherical mirror"],
-    correct: "Convex mirror"
+    question: "The binding energy of a nucleus is a measure of:",
+    answers: ["Nuclear mass", "Nuclear stability", "Radioactivity", "Nuclear size"],
+    correct: "Nuclear stability"
   },
   {
-    question: "The SI unit of pressure is:",
-    answers: ["N/m", "Pa", "J/m³", "N"],
-    correct: "Pa"
+    question: "What is the SI unit of magnetic flux?",
+    answers: ["Tesla", "Weber", "Henry", "Ampere"],
+    correct: "Weber"
   },
   {
-    question: "Which particle has a negative charge?",
-    answers: ["Proton", "Neutron", "Electron", "Alpha particle"],
-    correct: "Electron"
-  },
-  {
-    question: "What type of energy is stored in a stretched spring?",
-    answers: ["Kinetic energy", "Elastic potential energy", "Thermal energy", "Nuclear energy"],
-    correct: "Elastic potential energy"
-  },
-  {
-    question: "Which law states that pressure is transmitted equally in all directions in a fluid?",
-    answers: ["Boyle’s law", "Pascal’s law", "Archimedes’ principle", "Newton’s law"],
-    correct: "Pascal’s law"
+    question: "When a current-carrying conductor is placed in a magnetic field, the force experienced by it is given by:",
+    answers: ["Ohm’s law", "Coulomb’s law", "Fleming’s left-hand rule", "Right-hand thumb rule"],
+    correct: "Fleming’s left-hand rule"
   }
 ];
+
 
 
 

@@ -1,105 +1,106 @@
 const questions = [
   {
-    question: "A train travels 120 km in 2 hours. What is its average speed?",
-    answers: ["50 km/h", "55 km/h", "60 km/h", "65 km/h"],
-    correct: "60 km/h"
-  },
-  {
-    question: "If a bag of rice costs ₦7,500, how much will 4 bags cost?",
-    answers: ["₦28,000", "₦29,500", "₦30,000", "₦31,000"],
-    correct: "₦30,000"
-  },
-  {
-    question: "The perimeter of a rectangle is 40 cm. If the length is 12 cm, what is the width?",
-    answers: ["6 cm", "7 cm", "8 cm", "9 cm"],
-    correct: "8 cm"
-  },
-  {
-    question: "A car uses 20 liters of fuel to travel 300 km. How many km per liter does it run?",
-    answers: ["10 km/l", "12 km/l", "15 km/l", "20 km/l"],
-    correct: "15 km/l"
-  },
-  {
-    question: "A box contains 36 oranges. If shared equally among 9 children, how many oranges does each child get?",
-    answers: ["3", "4", "5", "6"],
+    question: "If 2x + 3 = 11, find the value of x.",
+    answers: ["2", "3", "4", "5"],
     correct: "4"
   },
   {
-    question: "The sum of three consecutive numbers is 96. What is the smallest number?",
-    answers: ["31", "32", "33", "34"],
-    correct: "31"
+    question: "Solve for x: 3x² − 12 = 0",
+    answers: ["−2, 2", "−4, 4", "−6, 6", "2, 4"],
+    correct: "−2, 2"
   },
   {
-    question: "A trader bought a phone for ₦45,000 and sold it for ₦54,000. What is his profit percentage?",
-    answers: ["18%", "19%", "20%", "22%"],
-    correct: "20%"
+    question: "Find the value of sin 30°.",
+    answers: ["1", "1/2", "√3/2", "√3"],
+    correct: "1/2"
   },
   {
-    question: "If the radius of a circle is 14 cm, what is its area? (Take π = 22/7)",
-    answers: ["600 cm²", "616 cm²", "620 cm²", "628 cm²"],
-    correct: "616 cm²"
+    question: "The sum of the first 10 natural numbers is:",
+    answers: ["45", "50", "55", "60"],
+    correct: "55"
   },
   {
-    question: "A man earns ₦50,000 per month. How much does he earn in 1 year?",
-    answers: ["₦500,000", "₦550,000", "₦600,000", "₦650,000"],
-    correct: "₦600,000"
+    question: "If the perimeter of a square is 32 cm, what is the area?",
+    answers: ["16 cm²", "32 cm²", "64 cm²", "128 cm²"],
+    correct: "64 cm²"
   },
   {
-    question: "If a train leaves at 9:30 am and arrives at 12:15 pm, how long was the journey?",
-    answers: ["2 hrs 30 mins", "2 hrs 45 mins", "3 hrs", "3 hrs 15 mins"],
-    correct: "2 hrs 45 mins"
+    question: "Simplify: (3² × 3⁴) ÷ 3³",
+    answers: ["3³", "3⁴", "3⁵", "3⁶"],
+    correct: "3³"
   },
   {
-    question: "A farmer harvested 250 mangoes. If he sold 180, how many were left?",
-    answers: ["60", "65", "70", "75"],
-    correct: "70"
+    question: "Find the gradient of the line passing through (2, 3) and (6, 11).",
+    answers: ["1", "2", "3", "4"],
+    correct: "2"
   },
   {
-    question: "If 5 pencils cost ₦150, how much do 12 pencils cost?",
-    answers: ["₦300", "₦340", "₦350", "₦360"],
-    correct: "₦360"
+    question: "If log₁₀x = 2, find the value of x.",
+    answers: ["10", "100", "1000", "10000"],
+    correct: "100"
   },
   {
-    question: "The sides of a triangle are 6 cm, 8 cm, and 10 cm. What type of triangle is it?",
-    answers: ["Equilateral", "Isosceles", "Right-angled", "Scalene"],
-    correct: "Right-angled"
+    question: "Solve: 5x − 7 = 3x + 9",
+    answers: ["6", "7", "8", "9"],
+    correct: "8"
   },
   {
-    question: "A shopkeeper sold 240 eggs in a week. If he sold the same number each day, how many eggs did he sell per day?",
-    answers: ["30", "32", "34", "36"],
-    correct: "34"
+    question: "What is the value of 7!?",
+    answers: ["720", "840", "5040", "7200"],
+    correct: "5040"
   },
   {
-    question: "If the simple interest on ₦20,000 for 2 years is ₦4,000, what is the rate percent per year?",
-    answers: ["8%", "9%", "10%", "12%"],
-    correct: "10%"
+    question: "Find the median of the data: 2, 5, 7, 9, 12",
+    answers: ["5", "7", "9", "12"],
+    correct: "7"
   },
   {
-    question: "A container holds 15 liters of water. How many 750 ml bottles can be filled?",
-    answers: ["15", "18", "20", "22"],
-    correct: "20"
+    question: "If the radius of a circle is 7 cm, find its circumference. (π = 22/7)",
+    answers: ["22 cm", "44 cm", "88 cm", "154 cm"],
+    correct: "44 cm"
   },
   {
-    question: "The average of 10 numbers is 25. What is their total sum?",
-    answers: ["200", "220", "240", "250"],
-    correct: "250"
+    question: "Simplify: √144 + √25",
+    answers: ["13", "15", "17", "19"],
+    correct: "17"
   },
   {
-    question: "A book was first sold at ₦1,200, but later discounted by 25%. What is the new price?",
-    answers: ["₦800", "₦850", "₦900", "₦950"],
-    correct: "₦900"
+    question: "If the probability of an event is 0.25, what is the probability that it does not occur?",
+    answers: ["0.25", "0.5", "0.75", "1"],
+    correct: "0.75"
   },
   {
-    question: "A tank fills at 12 liters per minute. How long will it take to fill 240 liters?",
-    answers: ["15 mins", "18 mins", "20 mins", "22 mins"],
-    correct: "20 mins"
+    question: "Find the value of x if x² = 49.",
+    answers: ["7", "−7", "±7", "14"],
+    correct: "±7"
   },
   {
-    question: "If 2 workers can finish a job in 8 days, how long will it take 4 workers at the same rate?",
-    answers: ["2 days", "3 days", "4 days", "5 days"],
-    correct: "4 days"
+    question: "The sum of angles in a triangle is:",
+    answers: ["90°", "180°", "270°", "360°"],
+    correct: "180°"
+  },
+  {
+    question: "Find the value of tan 45°.",
+    answers: ["0", "1", "√3", "√3/3"],
+    correct: "1"
+  },
+  {
+    question: "If a = 3 and b = 4, find √(a² + b²).",
+    answers: ["5", "6", "7", "9"],
+    correct: "5"
+  },
+  {
+    question: "Find the simple interest on ₦5000 at 10% per annum for 2 years.",
+    answers: ["₦500", "₦800", "₦1000", "₦1500"],
+    correct: "₦1000"
+  },
+  {
+    question: "If the ratio of boys to girls in a class is 3:5 and there are 24 boys, how many girls are there?",
+    answers: ["30", "35", "40", "45"],
+    correct: "40"
   }
 ];
+
 
 
 

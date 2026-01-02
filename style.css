@@ -17,10 +17,10 @@ body {
 }
 
 .container .box {
-  padding: 10px 15px;
+  padding: 15px 20px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-
+  border-radius: 20px;
   width: 350px;
 }
 
@@ -103,7 +103,20 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
+ .box h3.question {
+  padding: 10px 0;
+    font-size: 0.9rem;
+  }
+@media (max-width: 400px) {
+ .container .box {
+  width: 330px;
+}
+.btns button {
+  padding: 12px 8px;
+   
 
+}
+}
 .info::after,
 .info::before {
   position: absolute;
@@ -158,12 +171,12 @@ body {
 }
 
 .back-to-homepage {
-  position: absolute;
+  /* position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 78%;
-  /* text-align: center; */
-  margin-top: 20px;
+  top: 78%; */
+  text-align: center;
+  margin: 20px 0;
 }
 
 .back-to-homepage .back-to-homepage-button {
@@ -372,3 +385,4 @@ tr:nth-child(even) {
   width: 35%;
   display: none;
 }
+

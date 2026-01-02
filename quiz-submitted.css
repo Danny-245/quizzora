@@ -36,9 +36,17 @@ body{
     color: #333333;
     margin-top: 20px;
 }
+.container .box .submitted-con p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555555;
+}
 @media (max-width: 460px) {
     .container .box .submitted-con h2 {
         font-size: 22px;
+    }
+    .container .box .submitted-con p {
+        font-size: 14px;
     }
 }
 
@@ -47,10 +55,7 @@ body{
         font-size: 20px;
     }
 }
-.container .box .submitted-con p {
-    font-size: 16px;
-    color: #555555;
-}
+
 
 .container .box .submitted-con .home-button-con button {
     margin-top: 15px;

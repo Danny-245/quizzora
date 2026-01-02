@@ -12,7 +12,12 @@ body {
 :root {
   --font-size: 14px;
 }
-
+.mot {
+  font-size: 1.3rem;
+}
+.mt-f {
+  font-size: 0.9rem;
+}
 .top {
   width: 100%;
   height: 250px;
@@ -44,6 +49,16 @@ body {
   position: absolute;
   right: -100px;
   top: -50px;
+}
+@media (max-width: 420px) {
+  .top .cir {
+    width: 230px;
+    height: 230px;
+  }
+  .top .cir2 {
+    width: 220px;
+    height: 220px;
+  }
 }
 
 .top .mt-f {
@@ -105,10 +120,16 @@ body {
   -moz-box-shadow: 3px 3px 9px 0px rgba(204, 190, 204, 0.3);
   box-shadow: 3px 3px 9px 0px rgba(204, 190, 204, 0.3);
 }
+@media (max-width: 420px) {
+  .box {
+    padding: 17px 20px;
+  }
+}
 
 .checked {
   display: none;
 }
+
 
 .quiz-done .checked {
   display: block;
@@ -168,7 +189,11 @@ body {
   bottom: 0;
   width: 100%;
   height: 70px;
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 20px 20px 0 0;
 }
 
 .tab-con .tab {
@@ -181,6 +206,11 @@ body {
 .tab-con .tab span {
   color: #9e9999;
   font-size: 22px;
+}
+@media (max-width: 400px) {
+  .tab-con .tab span {
+  font-size: 20px;
+}
 }
 
 /* .tab span#homeIcon {
@@ -252,8 +282,9 @@ body {
   border: 5px solid #fdedaf;
   background-color: #353232;
   border-radius: 50%;
-  overflow: hidden !important; 
+  overflow: hidden !important;
 }
+
 .profile-pics .pic {
   width: 100%;
   height: 100%;
@@ -274,6 +305,9 @@ body {
 .flex-name-icon h3 {
   font-size: 17px;
   text-transform: capitalize;
+}
+.flex-name-icon p.md {
+  font-size: 0.77rem;
 }
 
 .edit-icon svg {
@@ -299,20 +333,31 @@ body {
   }
 }
 
-.upd-img {
-  position: relative;
+.ook {
+  /* position: relative; */
 }
 
-.upd {
+.ook {
+  position: relative;
   color: #fff;
-  height: 30px;
-  width: 30px;
+  height: 100%;
+  width: 100%;
   text-align: center;
-  border-radius: 50%;
-  background-color: #8a80b1;
+
+
+
+  /* left: 90%; */
+}
+
+.ook .upd {
   position: absolute;
-  bottom: 45px;
-  left: 85px;
+  background-color: #8a80b1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 7px;
+  left: 45px;
+  transform: translate(50%, 50%);
 }
 
 #input-file-click {
@@ -477,6 +522,11 @@ body {
   transition: 400ms;
   font-size: 15px;
 }
+@media (max-width: 420px) {
+  .content-container .ans {
+    font-size: 13px;
+  }
+}
 
 .content-container.active .ans {
   padding: 10px 5px;
@@ -594,6 +644,8 @@ flex-direction: column;
 .chat-div .message-txt {
   max-width: 75%;
   padding: 12px 16px;
+  font-size: 0.8rem;
+
   /* background-color: #f2f2ff; */
 }
 
@@ -660,6 +712,7 @@ flex-direction: column;
 }
 
 @keyframes dotBounce {
+
   0%,
   44% {
     transform: translateY(0);
@@ -737,7 +790,7 @@ flex-direction: column;
   background-color: #8a80b1;
 }
 
-.chat-form .message-input:valid ~ .chat-controls #send-btn {
+.chat-form .message-input:valid~.chat-controls #send-btn {
   display: block;
 }
 
@@ -860,12 +913,14 @@ flex-direction: column;
   border-right: 7px solid transparent;
   border-bottom: 9px solid #7cd2af;
 }
+
 /* .boxs-container .box {
 
 } */
 
 .box-num {
   margin: 5px 0;
+  font-size: 0.9rem;
 }
 
 .programmes {
@@ -925,6 +980,7 @@ flex-direction: column;
 .progress-box.b2 .progress-container {
   background-color: #fddbec;
 }
+
 .programmes .progress-box-container .txt h3 {
   font-size: 15px;
 }
@@ -963,6 +1019,7 @@ flex-direction: column;
   width: 100%;
   align-items: center;
   gap: 10px;
+  font-size: 12.8px;
 }
 
 .txt {
@@ -1168,14 +1225,17 @@ html {
   margin-top: 30px;
   text-align: center;
 }
+
 .app-attribution p {
   font-size: 12px;
   color: #888;
 }
-.app-attribution p a{
+
+.app-attribution p a {
   text-decoration: none;
   color: #8b80b6
 }
+
 .log-out-div h3 {
   font-size: 14px;
   color: #d32f2f;
@@ -1242,6 +1302,7 @@ html {
 }
 
 @keyframes scale {
+
   0%,
   40%,
   100% {
@@ -1310,7 +1371,7 @@ html {
 
 @media (max-width: 640px) {
   .profile-pics .pic {
-    top: -40px;
+
     width: 100px;
     height: 100px;
   }
@@ -1331,7 +1392,7 @@ html {
 
 @media (max-width: 365px) {
   .profile-details .buttons button {
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
   }
 
   .profile-overlay .profile-details {
@@ -1518,6 +1579,12 @@ html {
   color: #9c9c9c;
 }
 
+@media (max-width: 420px) {
+  .streak-div .streak-box .streak-text .streak-head {
+    font-size: 13.5px;
+  }
+}
+
 .streak-div .streak-box .streak-text .streak-para {
   text-transform: uppercase;
   font-size: 16px;
@@ -1527,7 +1594,9 @@ html {
   font-weight: 700;
   color: #9c9c9c;
   margin-bottom: 12px;
+  font-size: 0.86rem;
 }
+
 /* missed-streak-modal */
 .missed-streak {
   z-index: 9999;
@@ -1539,9 +1608,11 @@ html {
   width: 100%;
   background: rgba(0, 0, 0, 0.4);
 }
+
 .missed-streak.showPop {
   display: flex;
 }
+
 .missed-streak .missed-streak-modal {
   position: absolute;
   left: 50%;
@@ -1555,38 +1626,37 @@ html {
   border-radius: 10px;
   animation: popUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
+
 @keyframes popUp {
   from {
     transform: translate(-50%, -60%);
     /* transform: scale(0.9); */
     opacity: 0;
   }
+
   to {
     transform: translate(-50%, -50%);
     /* transform: scale(1); */
     opacity: 1;
   }
 }
+
 .missed-streak .missed-streak-modal .streak-lost-container .streak-fire img {
   filter: grayscale(1);
   opacity: 0.6;
 }
-.missed-streak
-  .missed-streak-modal
-  .streak-lost-container
-  .streak-lost-details {
+
+.missed-streak .missed-streak-modal .streak-lost-container .streak-lost-details {
   padding: 20px 15px;
   font-size: 14px;
   color: #656565;
 }
+
 .missed-streak .missed-streak-modal .streak-lost-container .continue-learning {
   padding: 15px 10px;
 }
-.missed-streak
-  .missed-streak-modal
-  .streak-lost-container
-  .continue-learning
-  button {
+
+.missed-streak .missed-streak-modal .streak-lost-container .continue-learning button {
   outline: none;
   border: none;
   padding: 12px 18px;
@@ -1596,11 +1666,8 @@ html {
   transition: 0.3s;
   cursor: pointer;
 }
-.missed-streak
-  .missed-streak-modal
-  .streak-lost-container
-  .continue-learning
-  button:hover {
+
+.missed-streak .missed-streak-modal .streak-lost-container .continue-learning button:hover {
   background: #43a047;
 }
 
@@ -1682,8 +1749,10 @@ html {
   color: #656565bb;
 }
 
+
 .what-is-streak {
   margin-top: 20px;
+  font-size: 0.9rem;
 }
 
 .what-is-streak .what-is-streak-details {
@@ -1707,7 +1776,7 @@ html {
 }
 
 .streak-page-tab .streak-card-large .streak-content-large .fire-icon-large img {
-  width: 60px;
+  width: 50px;
 }
 
 .streak-page-tab .streak-card-large .streak-content-large .streak-number-large {
@@ -1721,6 +1790,8 @@ html {
   font-size: 16px;
   color: #656565bb;
 }
+
+
 /* ///////////////////// */
 .milestone {
   margin-top: 30px;
@@ -1728,29 +1799,22 @@ html {
   align-items: center;
   justify-content: space-between;
 }
+
 .milestone .sdays-milestone {
   display: flex;
   gap: 5px;
 }
-.milestone
-  .sdays-milestone
-  .sdays-milestone-content
-  .sdays-milestone-content-details
-  h3 {
+
+.milestone .sdays-milestone .sdays-milestone-content .sdays-milestone-content-details h3 {
   font-size: 15px;
 }
-.milestone
-  .sdays-milestone
-  .sdays-milestone-content
-  .sdays-milestone-content-label {
+
+.milestone .sdays-milestone .sdays-milestone-content .sdays-milestone-content-label {
   font-size: 14px;
   color: #656565e3;
 }
-.milestone
-  .sdays-milestone
-  .sdays-milestone-content
-  .sdays-milestone-content-label
-  span {
+
+.milestone .sdays-milestone .sdays-milestone-content .sdays-milestone-content-label span {
   color: #d32f2f;
   font-weight: 700;
 }
@@ -1759,24 +1823,74 @@ html {
   filter: grayscale(100%);
   opacity: 0.5;
 }
+
 .more-update-alert {
   margin-top: 30px;
 }
+
 .more-update-alert p {
   font-size: 12px;
   text-align: center;
   color: #656565bb;
 }
+
 .xp-earned-container {
   margin: -10px auto 20px;
 }
+
 .xp-earned-container .xp-earned-correct-txt {
   color: #16a34a;
   font-weight: 700;
 }
+
 .xp-earned-container .xp-earned-wrong-txt {
   color: #dc2626;
   font-weight: 700;
+}
+
+@media (max-width: 420px) {
+  .xp-points-label p,
+.badges-earned-label p {
+  font-size: 12px;
+}
+.xp-points i, .badges-earned i {
+  font-size: 17px;
+}
+.your-stat .your-stat-txt {
+  font-size: 13px;
+}
+.what-is-streak {
+  margin-top: 20px;
+  font-size: 0.84rem;
+}
+.what-is-streak .what-is-streak-details {
+  font-size: 12px;
+}
+.milestone .sdays-milestone .sdays-milestone-content .sdays-milestone-content-details h3 {
+  font-size: 13px;
+}
+.milestone .sdays-milestone .sdays-milestone-content .sdays-milestone-content-label {
+  font-size: 12px;
+  color: #656565e3;
+}
+.milestone .sdays-milestone .sdays-img img {
+  width: 35px;
+}
+.milestone .sdays-checkmark img {
+  width: 15px;
+}
+.streak-page-tab .streak-card-large .streak-content-large .streak-number-large {
+  font-size: 20px;
+}
+.streak-page-tab .streak-card-large .streak-content-large .streak-label-large p {
+  font-size: 14px;
+}
+.streak-page-tab .streak-card-large .streak-content-large .fire-icon-large img {
+  width: 35px;
+}
+.checked img {
+  width: 21px;
+}
 }
 /* .milestone .sdays-milestone {
  width: 80%;
@@ -1851,6 +1965,7 @@ html {
   font-size: 18px;
 }
 
+
 .modal-container .quiz-box .options-container {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -1915,6 +2030,9 @@ html {
   width: 50%;
   transition: all 0.3s;
 }
+
+
+
 
 /* .switch-tab .sw-box .streak {
   background-color: #8a80b1;
@@ -1986,6 +2104,37 @@ html {
   background-color: #e9ecef;
   cursor: not-allowed;
   /* background-color: rgba(138, 128, 177, 0.418); */
+}
+.xp-earned-container {
+  font-size: 15px;
+}
+
+@media (max-width: 420px) {
+.modal-container .quiz-box .question-box h3 {
+  font-size: 14px;
+}
+.modal-container .quiz-box .options-container button{
+  font-size: 12px;
+}
+.modal-container .quiz-box .dailyC {
+  font-size: 13px;
+}
+.switch-tab .sw-box .active-tab,
+.switch-tab .sw-box .streak {
+  font-size: 12.5px;
+}
+.completed-challenge .completed-challenge-txt p {
+  font-size: 12px;
+}
+.completed-challenge .completed-challenge-txt h2 {
+  font-size: 16px;
+}
+.completed-challenge .next-challenge {
+  font-size: 13px;
+}
+.xp-earned-container {
+  font-size: 13px;
+}
 }
 
 .completed-challenge .next-challenge::before {

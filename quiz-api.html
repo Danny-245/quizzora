@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quizora Daily Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --brand: #8a80b1;
+      --bg: #f6f6fb;
+      --correct: #2e7d32;
+      --wrong: #c62828;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #fff;
+      width: 90%;
+      max-width: 420px;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--brand);
+    }
+
+    .option {
+      padding: 12px;
+      border-radius: 10px;
+      background: #f1f1f6;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .option:hover {
+      background: #e6e3f5;
+    }
+
+    .correct {
+      background: #d4edda !important;
+      color: var(--correct);
+      font-weight: 600;
+    }
+
+    .wrong {
+      background: #f8d7da !important;
+      color: var(--wrong);
+    }
+
+    .info {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Daily Challenge</h2>
+  <p id="question">Loading question…</p>
+  <div id="options"></div>
+  <p class="info" id="status"></p>
+</div>
+
+<script>
+  const today = new Date().toDateString();
+  const answeredToday = localStorage.getItem("answeredDate");
+
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+  const statusEl = document.getElementById("status");
+
+  async function fetchDailyQuestion() {
+    const res = await fetch(
+      "https://opentdb.com/api.php?amount=1&type=multiple"
+    );
+    const data = await res.json();
+    return data.results[0];
+  }
+
+  function shuffle(arr) {
+    return arr.sort(() => Math.random() - 0.5);
+  }
+
+  async function loadDailyQuiz() {
+    if (answeredToday === today) {
+      questionEl.textContent =
+        "You’ve already completed today’s challenge 🎉";
+      return;
+    }
+
+    const q = await fetchDailyQuestion();
+    questionEl.innerHTML = q.question;
+
+    const answers = shuffle([
+      q.correct_answer,
+      ...q.incorrect_answers
+    ]);
+
+    answers.forEach(answer => {
+      const div = document.createElement("div");
+      div.className = "option";
+      div.innerHTML = answer;
+
+      div.onclick = () => {
+        document
+          .querySelectorAll(".option")
+          .forEach(opt => (opt.style.pointerEvents = "none"));
+
+        if (answer === q.correct_answer) {
+          div.classList.add("correct");
+          statusEl.textContent = "Correct! Streak continues 🔥";
+        } else {
+          div.classList.add("wrong");
+
+          // 👉 show the correct answer
+          document.querySelectorAll(".option").forEach(opt => {
+            if (opt.innerHTML === q.correct_answer) {
+              opt.classList.add("correct");
+            }
+          });
+
+          statusEl.innerHTML =
+            `Wrong 😕<br><strong>Correct answer:</strong> ${q.correct_answer}`;
+        }
+
+        localStorage.setItem("answeredDate", today);
+      };
+
+      optionsEl.appendChild(div);
+    });
+  }
+// localStorage.removeItem("answeredDate");
+  loadDailyQuiz();
+</script>
+
+</body>
+</html>

@@ -263,6 +263,19 @@ body {
 
 
 }
+@media (max-width: 370px) {
+    .input-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* gap: 30px; */
+}
+.input-flex button {
+    margin: 20px 0 0;
+    width: 100%;
+    border-radius: 20px;
+}
+}
 
 
 /* use animate css to animate the overlay button to proceed to the quiz, dont forget */
