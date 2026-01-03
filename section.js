@@ -988,3 +988,14 @@ function xpEarned() {
   xpEarnedWrong.innerText = "+3XP earned";
 }
 xpEarned();
+
+const showExpAns = document.getElementById("show-quiz-exp");
+const expAns = document.getElementById("quiz-exp-ans");
+
+const quizExpAccordion = document.getElementsByClassName("quiz-explanation");
+for(i = 0; i < quizExpAccordion.length; i++) {
+  quizExpAccordion[i].addEventListener("click", function() {
+    this.classList.toggle("showExpAns");
+    console.log("click");
+  })
+}
